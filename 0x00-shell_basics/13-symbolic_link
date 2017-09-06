@@ -1,2 +1,2 @@
 #!/bin/bash
-ln --target-directory=. /bin/ls __ls__
+ln -T -s /bin/ls __ls__
