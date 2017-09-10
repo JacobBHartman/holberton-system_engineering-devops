@@ -1,0 +1,18 @@
+total 64
+drwxrwxr-x 3 vagrant vagrant 4096 Sep 10 19:28 .
+drwxrwxr-x 6 vagrant vagrant 4096 Sep 10 18:21 ..
+-rwxrw-r-- 1 vagrant vagrant   32 Sep 10 18:25 0-hello_world
+-rw-rw-r-- 1 vagrant vagrant   12 Sep 10 18:22 0-hello_world~
+-rwxrw-r-- 1 vagrant vagrant   29 Sep 10 18:34 1-confused_smiley
+-rwxrw-r-- 1 vagrant vagrant   29 Sep 10 18:33 1-confused_smiley~
+-rwxrw-r-- 1 vagrant vagrant   28 Sep 10 18:43 2-hellofile
+-rw-rw-r-- 1 vagrant vagrant   12 Sep 10 18:38 2-hellofile~
+-rwxrw-r-- 1 vagrant vagrant   39 Sep 10 18:46 3-twofiles
+-rwxrw-r-- 1 vagrant vagrant   29 Sep 10 18:47 4-lastlines
+-rwxrw-r-- 1 vagrant vagrant   29 Sep 10 18:49 5-firstlines
+-rwxrw-r-- 1 vagrant vagrant   51 Sep 10 19:24 6-third_line
+-rwxrw-r-- 1 vagrant vagrant   57 Sep 10 19:22 6-third_line~
+-rwxrw-r-- 1 vagrant vagrant   36 Sep 10 19:28 8-cwd_state
+-rw-rw-r-- 1 vagrant vagrant   78 Sep 10 18:51 examplefile
+-rw-rw-r-- 1 vagrant vagrant    0 Sep 10 19:28 ls_cwd_content
+drwxrwxr-x 2 vagrant vagrant 4096 Sep 10 18:26 tmp
