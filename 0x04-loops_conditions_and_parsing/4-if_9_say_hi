@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script displays "Holberton School" 10 times except for the 9th time
+INDX=0
+while [ $INDX -lt 10 ]
+do
+    echo "Holberton School"
+    if [ $INDX -eq 8 ]
+    then
+	echo "Hi"
+    fi
+    INDX=$(( INDX+1 ))
+done

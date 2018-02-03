@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script displays "Holberton School" 10 times except for the 9th time
+INDX=1
+while [ $INDX -lt 21 ]
+do
+    echo "$INDX"
+    case "$INDX" in
+	4)  echo "bad luck from China"
+	    ;;
+	9)  echo "bad luck from Japan"
+	    ;;
+	17) echo "bad luck from Italy"
+	    ;;
+    esac
+    INDX=$(( INDX+=1 ))
+done

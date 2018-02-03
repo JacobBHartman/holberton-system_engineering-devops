@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory
+LIST="$(find | cut --delimiter="-" -f2)"
+for files in $LIST
+do
+    echo "$files"
+done

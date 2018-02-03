@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying Holberton School 10 times
+INDX=0
+while [ $INDX -lt 10 ]
+do
+    echo "Holberton School"
+    INDX=$(( INDX+1 ))
+done
