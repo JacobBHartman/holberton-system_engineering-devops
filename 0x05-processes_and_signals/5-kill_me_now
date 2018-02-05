@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script kills another script
+# kill 'bash 4-to_infinity_and_beyond'
+kill $(pgrep -f 'bash ./4-to_infinity_and_beyond')
