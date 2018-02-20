@@ -1,5 +1,8 @@
 # holberton-systems_engineering-devops
 
+## Info
+Each project has its own README where review questions may be found.
+
 ## Contents
 | Projects                            |
 | ----------------------------------- |
@@ -13,11 +16,10 @@
 | `0x07-networking_basics`            |
 | `0x08-networking_basics_2`          |
 
-
 ## Environment
-OS: Ubuntu 14.04 LTS
-Language(s): Bash
-Style: Shellcheck v. 0.3.3
+* OS: Ubuntu 14.04 LTS
+* Language(s): Bash
+* Style: Shellcheck v. 0.3.3
 
 ## Author
 Jacob B. Hartman
