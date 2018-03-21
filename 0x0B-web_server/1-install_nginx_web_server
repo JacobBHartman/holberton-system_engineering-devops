@@ -2,4 +2,6 @@
 # install an nginx web server
 sudo apt-get update
 sudo apt-get -y install nginx
-echo "Holberton School" > /usr/share/nginx/html/index.html
+sudo sed -i '31,35d' /etc/nginx/sites-available/default
+sudo sed -i '31i\\t\treturn 200 "Holberton School\\n";\n\t\tdefault_type text/plain;' /etc/nginx/sites-available/default
+sudo service nginx restart
