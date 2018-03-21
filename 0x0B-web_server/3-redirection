@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# install an nginx web server
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo sed -i '31,35d' /etc/nginx/sites-available/default
+sudo sed -i '31i\\t\treturn 200 "Holberton School\\n";\n\t\tdefault_type text/plain;' /etc/nginx/sites-available/default
+sudo sed -i '35i\\tlocation /redirect_me {\n\t\treturn 301;\n\t}' /etc/nginx/sites-available/default
+sudo service nginx restart
