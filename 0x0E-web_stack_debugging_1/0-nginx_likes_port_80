@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# re-link nginx config file and restart nginx
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
