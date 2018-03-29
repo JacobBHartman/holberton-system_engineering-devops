@@ -1,0 +1,3 @@
+exec { 'execute him!':
+  command  => 'pkill ./killmenow'
+}
