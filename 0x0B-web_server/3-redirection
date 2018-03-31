@@ -1,8 +1,28 @@
 #!/usr/bin/env bash
-# install an nginx web server
-sudo apt-get update
+#### This is a Bash script that configures an Nginx server so that '/redirect_me'
+# redirects to another page.                                                        
+# This script should be used on a brand-new install of nginx                        
+###                                                                                 
+
+# update and install, automatically respond to prompts with a yes                   
+sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo sed -i '31,35d' /etc/nginx/sites-available/default
-sudo sed -i '31i\\t\treturn 200 "Holberton School\\n";\n\t\tdefault_type text/plain;' /etc/nginx/sites-available/default
-sudo sed -i '35i\\tlocation /redirect_me {\n\t\treturn 301;\n\t}' /etc/nginx/sites-available/default
+
+# These are the pages that the script redirects away from and towards.              
+FROM='/redirect_me'
+TO='https://www.youtube.com/watch?v=jRHQPG1xd9o'
+
+# This is the nginx config file that requires modification, as well as              
+# some configurations that are desired                                              
+CONFIG='/etc/nginx/sites-available/default'
+
+# This is the text that we want to insert into the relevant config file             
+TEXT="\\\tlocation $FROM {\n\t\treturn 301 $TO;\n\t}\n\n"
+
+# sed will add in the necessary text                                                
+sudo sed -i "38i\                                                                   
+$TEXT" $CONFIG
+
+# For the changes to take place                                                     
 sudo service nginx restart
+
