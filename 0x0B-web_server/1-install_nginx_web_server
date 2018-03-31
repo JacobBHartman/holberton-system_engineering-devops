@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # install an nginx web server
-sudo apt-get update
+# the -y flag will automatically state yes for you since user is not present
+#    when the script runs
+sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo sed -i '31,35d' /etc/nginx/sites-available/default
-sudo sed -i '31i\\t\treturn 200 "Holberton School\\n";\n\t\tdefault_type text/plain;' /etc/nginx/sites-available/default
+# It is much easier to simply echo the phrase into index.html
+echo 'Holberton School' > /usr/share/nginx/html/index.html
 sudo service nginx restart
