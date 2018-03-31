@@ -8,7 +8,7 @@ sudo apt-get -y install nginx
 
 # It is much easier to simply echo the phrase want into index.html .
 # In order to echo the phrase into the file we must login as su
-echo 'Holberton School' > /usr/share/nginx/html/index.html
+sudo sh -c "echo 'Holberton School' > /usr/share/nginx/html/index.html"
 
 # it is necessary to restart the web server for changes to take place
 sudo service nginx restart
