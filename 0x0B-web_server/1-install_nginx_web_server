@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 # install an nginx web server
+
 # the -y flag will automatically state yes for you since user is not present
 #    when the script runs
 sudo apt-get -y update
 sudo apt-get -y install nginx
-# It is much easier to simply echo the phrase into index.html
+
+# It is much easier to simply echo the phrase want into index.html
 echo 'Holberton School' > /usr/share/nginx/html/index.html
+
+# it is necessary to restart the web server for changes to take place
 sudo service nginx restart
