@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-#### This is a Bash script that configures an Nginx server so that '/redirect_me'
-# redirects to another page.                                                        
-# This script should be used on a brand-new install of nginx                        
-###                                                                                 
+# This script sets up an index.html and 301 redirect
 
 # update and install, automatically respond to prompts with a yes                   
 sudo apt-get -y update
 sudo apt-get -y install nginx
+
+sudo sh -c "echo 'Holberton School' > /usr/share/nginx/html/index.html"
 
 # These are the pages that the script redirects away from and towards.              
 FROM='/redirect_me'
