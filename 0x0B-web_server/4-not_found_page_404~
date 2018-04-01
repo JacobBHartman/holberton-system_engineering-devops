@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# This script sets up an index.html and 301 redirect
+
+# update and install, automatically respond to prompts with a yes
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+sudo chmod 777 /usr/share/nginx/html/index.html
+sudo sh -c "echo 'Holberton School' > /usr/share/nginx/html/index.html"
+
+#####################################################
+
+# These are the pages that the script redirects away from and toward
+FROM='/redirect_me'
+TO='https://www.youtube.com/watch?v=jRHQPG1xd9o'
+
+# This is the nginx config file that requires modification, as well as
+# some configurations that are desired
+CONFIG='/etc/nginx/sites-available/default'
+
+# This is the text that we want to insert into the relevant config file
+TEXT=" \\\tlocation $FROM {\n\t\treturn 301 $TO;\n\t}\n\n"
+
+# sed will add in the necessary text
+sudo sed -i "38i\
+$TEXT" $CONFIG
+
+##########################################################
+
+# This is the phrase we wish to present on a 404
+PHRASE="Ceci n'est pas une page"
+
+sudo touch /usr/share/nginx/html/404.html
+sudo chmod 766 /usr/share/nginx/html/404.html
+echo "$PHRASE" > /usr/share/nginx/html/404.html
+sudo sed -i "s/#error_page 404/error_page 404" $CONFIG
+
+# For the changes to take place
+sudo service nginx restart
