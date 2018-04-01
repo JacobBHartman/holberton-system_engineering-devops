@@ -31,7 +31,7 @@ $TEXT" $CONFIG
 PHRASE="Ceci n'est pas une page"
 
 sudo touch /usr/share/nginx/html/404.html
-sudo chmod 766 /usr/share/nginx/html/404.html
+sudo chmod 777 /usr/share/nginx/html/404.html
 echo "$PHRASE" > /usr/share/nginx/html/404.html
 echo -e "\n" >> /usr/share/nginx/html404.html
 OLD="#error_page 404"
