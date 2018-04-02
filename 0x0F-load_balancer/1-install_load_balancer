@@ -16,6 +16,6 @@ backend web-backend
 \tbalance roundrobin
 \tserver 209-web-01 54.157.250.230
 \tserver 209-web-02 107.20.129.42\n
-" | sudo tee --append /etc/haxproxy/haproxy.cfg
+" | sudo tee --append /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
