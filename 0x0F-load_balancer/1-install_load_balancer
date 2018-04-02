@@ -6,7 +6,7 @@ sudo apt-get -y install haproxy
 
 sed -i "9iENABLED=1\n" /etc/default/haproxy
 
-echo -e "
+sudo echo -e "
 \nfrontend Local_Server
 \tbind*:80
 \tmode http
