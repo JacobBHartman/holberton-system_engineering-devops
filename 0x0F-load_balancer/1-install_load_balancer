@@ -4,7 +4,7 @@ sudo add-apt-repository -y ppa:vbernat/haproxy-1.7
 sudo apt -y update
 sudo apt -y install haproxy
 
-sudo sed -i "9iENABLED=1\n" /etc/default/haproxy
+sudo sed -i "s/ENABLED=0/ENABLED=1" /etc/default/haproxy
 
 sudo echo '
 frontend Local_Server
@@ -15,8 +15,7 @@ frontend Local_Server
 backend web-backend
         mode http
         balance roundrobin
-        server 209-web-01 54.157.250.230
-        server 209-web-02 107.20.129.42
-' | sudo tee --append /etc/haproxy/haproxy.cfg
+        server 209-web-01 54.157.250.230 check
+        server 209-web-02 107.20.129.42 check' | sudo tee --append /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
