@@ -6,16 +6,17 @@ sudo apt -y install haproxy
 
 sudo sed -i "9iENABLED=1\n" /etc/default/haproxy
 
-sudo echo -e "
-\nfrontend Local_Server
-\tbind *:80
-\tmode http
-\tdefault_backend web-backend\n
+sudo echo '
+frontend Local_Server
+        bind *:80
+        mode http
+        default_backend web-backend
+
 backend web-backend
-\tmode http
-\tbalance roundrobin
-\tserver 209-web-01 54.157.250.230
-\tserver 209-web-02 107.20.129.42\n
-" | sudo tee --append /etc/haproxy/haproxy.cfg
+        mode http
+        balance roundrobin
+        server 209-web-01 54.157.250.230
+        server 209-web-02 107.20.129.42
+' | sudo tee --append /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
