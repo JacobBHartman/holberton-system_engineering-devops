@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# display information about subdomains
+if [ -z $2 ]
+then
+    dig "www.$1" | awk -v SUB="www" -F '\t| ' '$0~"^"SUB { print "The subdomain "SUB" is a "$4" record and points to "$5 }' -
+    dig "lb-01.$1" | awk -v SUB="lb-01" -F '\t| ' '$0~"^"SUB { print "The subdomain "SUB" is a "$4" record and points to "$5 }' -
+    dig "web-01.$1" | awk -v SUB="web-01" -F '\t| ' '$0~"^"SUB { print "The subdomain "SUB" is a "$4" record and points to "$5 }' -
+    dig "web-02.$1" | awk -v SUB="web-02" -F '\t| ' '$0~"^"SUB { print "The subdomain "SUB" is a "$4" record and points to "$5 }' -
+else
+    dig "$2.$1" | awk -v SUB="$2" -F '\t| ' '$0~"^"SUB { print "The subdomain "SUB" is a "$4" record and points to "$5 }' -
+fi
