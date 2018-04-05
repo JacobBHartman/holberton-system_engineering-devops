@@ -12,4 +12,4 @@ sed -i 's/listen 80/listen 8080' /etc/nginx/sites-available/default
 sed -i 's/]:80 default_server/]:8080 default_server/' /etc/nginx/sites-available/default
 
 pkill apache2
-sudoo -u nginx service nginx restart
+sudo -u nginx service nginx restart
