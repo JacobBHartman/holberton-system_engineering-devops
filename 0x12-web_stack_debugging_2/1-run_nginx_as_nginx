@@ -2,14 +2,14 @@
 # configures a server to not run as root
 
 # change the permissions of the config file
-chmod 644 /etc/nginx/nginx.conf
+chmod 755 /etc/nginx/nginx.conf
 
 # change the user
 sed -i 's/#user www-data;/user nginx;/1' /etc/nginx/nginx.conf
 
 # get the server to listen on 8080
 sed -i 's/listen 80/listen 8080' /etc/nginx/sites-available/default
-sed -i 's/]:80 default_server/]:8080 default_server/' /etc/nginx/sites-available/default
+sed -i 's/]:80 default_server/]:8080 default_server' /etc/nginx/sites-available/default
 
 pkill apache2
 sudo -u nginx service nginx restart
