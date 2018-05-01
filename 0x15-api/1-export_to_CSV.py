@@ -27,4 +27,4 @@ if __name__ == '__main__':
         for todo in employee_todos:
             csv.writer(f, quoting=csv.QUOTE_ALL).writerow(
                 [employee_id, employee_name,
-                str(todo['completed']), todo['title']])
+                 str(todo['completed']), todo['title']])
