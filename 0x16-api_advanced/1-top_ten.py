@@ -21,5 +21,6 @@ def top_ten(subreddit):
     response = requests.get(url + path, headers=header, allow_redirects=False)
     if response.status_code < 300:
         for i in range(10):
-            print(response.json()['data']['children'][i]['data']['title'])
+            if response.json()['data']['children'][i]['data']['title']:
+                print(response.json()['data']['children'][i]['data']['title'])
     print(None)
