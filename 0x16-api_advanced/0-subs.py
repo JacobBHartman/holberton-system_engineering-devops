@@ -9,6 +9,7 @@
 
 import requests
 
+
 def number_of_subscribers(subreddit):
     '''
         This Python method queries the Reddit API
